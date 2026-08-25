@@ -78,7 +78,7 @@ func mapStoreErr(err error) error {
 	case errors.Is(err, layerstore.ErrDuplicate):
 		return ErrDuplicateLayer
 	case errors.Is(err, layerstore.ErrEmpty):
-		return ErrBadInput
+		return ErrEmptyStack
 	case errors.Is(err, layerstore.ErrFull):
 		return ErrBadInput
 	default:

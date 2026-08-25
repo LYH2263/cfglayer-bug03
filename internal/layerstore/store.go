@@ -56,7 +56,7 @@ func (s *Store) Pop() (Layer, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	if len(s.stack) == 0 {
-		return Layer{}, ErrFull
+		return Layer{}, ErrEmpty
 	}
 	last := len(s.stack) - 1
 	layer := s.stack[last]
